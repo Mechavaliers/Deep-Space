@@ -2,7 +2,9 @@ package frc.ca.team4519;
 
 import edu.wpi.first.wpilibj.Encoder;
 
-public class Drivebase extends Subsystem {
+import frc.ca.team4519.lib.*;
+
+public class Drivebase extends Subsystem implements Thread{
 
     public static Drivebase thisInstance = new Drivebase();
 
@@ -31,6 +33,10 @@ public class Drivebase extends Subsystem {
         rightDrive = new Talon(Constatnts.rightDrive);
         leftDriveEncoder = new Encoder(Constants.leftDriveEncoderA, Constants.leftDriveEncoderB, Constants.isLeftDriveEncoderFlipped, EncodingType.k4x);
         rightDriveEncoder = new Encoder(Constants.rightDriveEncoerA, Constants.rightDrieEncoerB, Constants.isRightDriveEncoderFlipped, EncodingType.k4x);
+    }
+
+    public double DriveControll() {
+        
     }
 
     public void clearSensors();
