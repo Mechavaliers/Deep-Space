@@ -15,7 +15,7 @@ public class Constants {
     public static final int rightDriveEncoderB = 3;
 
     public static final boolean isLeftDriveEncoderFlipped = false;
-    public static final boolean isRihtDriveEncoderFlipped = false;
+    public static final boolean isRightDriveEncoderFlipped = false;
 
     //Shooter
     public static final int leftShooterWheel = 2;

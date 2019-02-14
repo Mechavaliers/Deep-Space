@@ -1,7 +1,11 @@
-package frc.ca.team4519;
+package frc.ca.team4519.frc2019.subsystems;
 
 import edu.wpi.first.wpilibj.Encoder;
 
+import edu.wpi.first.wpilibj.Solenoid;
+import frc.ca.team4519.frc2019.Constants;
+import frc.ca.team4519.lib.Subsystem;
+import frc.ca.team4519.lib.Thread;
 import frc.ca.team4519.lib.*;
 
 //Hatch Mechanism
@@ -9,10 +13,10 @@ public class Harry extends Subsystem implements Thread{
 
     public static Harry thisInstance = new Harry();
 
-    public Solenoid harr;
+    public Solenoid harry;
     public Solenoid yeeter;
 
-    public boolen YEET = true;
+    public boolean YEET = true, STOW = true, ENGAGED = false;
 
     public Harry() {
         thisInstance = this;
@@ -25,11 +29,16 @@ public class Harry extends Subsystem implements Thread{
         yeeter.set(YEET);
     }
 
+    public void loops() {
+
+    }
+
     public void update() {
 
     }
 
-    public void disableSubsystem() [
-
-    ]
+    public void disableSubsystem() {
+        harry.set(STOW);
+        yeeter.set(!YEET);
+    }
 }

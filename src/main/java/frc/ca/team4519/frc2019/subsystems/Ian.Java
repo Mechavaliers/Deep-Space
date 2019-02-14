@@ -1,7 +1,10 @@
-package frc.ca.team4519;
+package frc.ca.team4519.frc2019.subsystems;
 
-import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.*;
 
+import frc.ca.team4519.frc2019.Constants;
+import frc.ca.team4519.frc2019.Gains;
+import frc.ca.team4519.lib.Thread;
 import frc.ca.team4519.lib.*;
 
 //The Intake
@@ -14,6 +17,8 @@ public class Ian extends Subsystem implements Thread{
 
     public boolean DEPLOY = true, RETRACT = false;
 
+    public static Ian grabInstance() { return thisInstance; }
+
     public Ian() {
         thisInstance = this;
 
@@ -22,12 +27,13 @@ public class Ian extends Subsystem implements Thread{
     }
 
     public void wantIan() {
-        ian.set(DEPLOY)
+        ian.set(DEPLOY);
     }
 
     public void stowIan() {
         ian.set(RETRACT);
     }
+
     public void ianMindControl(boolean wantIan) {
         if (wantIan) {
             wantIan();
@@ -44,8 +50,8 @@ public class Ian extends Subsystem implements Thread{
         iansFriend.set(Gains.iansSpitSpeed);
     }
 
-    public void killBob() {
-        iansFriend.set(Gains.killBob);
+    public void killIan() {
+        iansFriend.set(Gains.killIan);
     }
 
     public void bobsManipulation(boolean inviteBobOver, boolean kickBobOut) {
@@ -55,7 +61,15 @@ public class Ian extends Subsystem implements Thread{
         }else if(kickBobOut){
             kickBobOut();
         }else{
-            killBob();
+            killIan();
         }
+    }
+
+    public void loops() {
+
+    }
+
+    public void update() {
+
     }
 }   

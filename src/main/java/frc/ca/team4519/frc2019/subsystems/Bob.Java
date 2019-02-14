@@ -1,7 +1,11 @@
-package frc.ca.team4519;
+package frc.ca.team4519.frc2019.subsystems;
 
 import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.Talon;
 
+import frc.ca.team4519.frc2019.Constants;
+import frc.ca.team4519.lib.Thread;
 import frc.ca.team4519.lib.*;
 
 //Ball Mechanism
@@ -18,8 +22,12 @@ public class Bob extends Subsystem implements Thread{
         thisInstance = this;
 
         leftWheel = new Talon(Constants.leftShooterWheel);
-        rightWeel = new Talon(Constants.rightShooterWheel);
+        rightWheel = new Talon(Constants.rightShooterWheel);
         indexer = new Solenoid(Constants.indexer);
+    }
+
+    public void loops() {
+
     }
 
     public void disable() {

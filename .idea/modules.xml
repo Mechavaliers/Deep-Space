@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Deep-Space.iml" filepath="$PROJECT_DIR$/Deep-Space.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Deep-Space.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Deep-Space.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Deep-Space.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Deep-Space.test.iml" />
+    </modules>
+  </component>
+</project>

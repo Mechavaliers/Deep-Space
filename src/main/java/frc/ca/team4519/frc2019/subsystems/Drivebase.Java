@@ -1,8 +1,12 @@
-package frc.ca.team4519;
+package frc.ca.team4519.frc2019.subsystems;
 
-import edu.wpi.first.wpilibj.Encoder;
+import com.kauailabs.navx.frc.AHRS;
+import edu.wpi.first.wpilibj.*;
 
-import frc.ca.team4519.lib.*;
+import frc.ca.team4519.frc2019.Constants;
+import frc.ca.team4519.lib.DrivetrainOutput;
+import frc.ca.team4519.lib.Subsystem;
+import frc.ca.team4519.lib.Thread;
 
 public class Drivebase extends Subsystem implements Thread{
 
@@ -22,6 +26,11 @@ public class Drivebase extends Subsystem implements Thread{
         return thisInstance;
     }
 
+    @Override
+    public void loops() {
+
+    }
+
     public interface Controller {
         DrivetrainOutput update(Pose pose);
     }
@@ -30,10 +39,11 @@ public class Drivebase extends Subsystem implements Thread{
         thisInstance = this;
 
         leftDrive = new Talon(Constants.leftDrive);
-        rightDrive = new Talon(Constatnts.rightDrive);
-        leftDriveEncoder = new Encoder(Constants.leftDriveEncoderA, Constants.leftDriveEncoderB, Constants.isLeftDriveEncoderFlipped, EncodingType.k4x);
-        rightDriveEncoder = new Encoder(Constants.rightDriveEncoerA, Constants.rightDrieEncoerB, Constants.isRightDriveEncoderFlipped, EncodingType.k4x);
+        rightDrive = new Talon(Constants.rightDrive);
+        leftDriveEncoder = new Encoder(Constants.leftDriveEncoderA, Constants.leftDriveEncoderB, Constants.isLeftDriveEncoderFlipped, CounterBase.EncodingType.k4X);
+        rightDriveEncoder = new Encoder(Constants.rightDriveEncoderA, Constants.rightDriveEncoderB, Constants.isRightDriveEncoderFlipped, CounterBase.EncodingType.k4X);
         shifter = new Solenoid(Constants.shifter);
+        navX = new AHRS(SPI.Port.kMXP);
 
     }
 
@@ -46,7 +56,7 @@ public class Drivebase extends Subsystem implements Thread{
         rightDrive.set(power.rightOutput);
     }
 
-    public DrivetrainOutput arcade(double throttle, double turning) {
+    public DrivetrainOutput arcade(double throttle, double turn) {
             throttle = (Math.abs(throttle) > Math.abs(0.03))? throttle : 0.0;
             turn = (Math.abs(turn) > Math.abs(0.03))? turn : 0.0;
 
@@ -56,11 +66,17 @@ public class Drivebase extends Subsystem implements Thread{
             return new DrivetrainOutput(left, right);
     }
 
-    public void clearSensors();
+    public void clearSensors() {
+        leftDriveEncoder.reset();
+        rightDriveEncoder.reset();
+        navX.reset();
+    }
 
     public void disableSubsystem() {
         setLeftRightPower(new DrivetrainOutput(0.0, 0.0));
     }
 
-    public void update();
+    public void update() {
+
+    }
 }
