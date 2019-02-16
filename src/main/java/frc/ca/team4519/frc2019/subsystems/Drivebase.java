@@ -2,6 +2,7 @@ package frc.ca.team4519.frc2019.subsystems;
 
 import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import frc.ca.team4519.frc2019.Constants;
 import frc.ca.team4519.lib.DrivetrainOutput;
@@ -39,10 +40,19 @@ public class Drivebase extends Subsystem implements Thread{
         thisInstance = this;
 
         leftDrive = new Talon(Constants.leftDrive);
+        leftDrive.setName("Drivebase", "Left Drive Motors");
+
         rightDrive = new Talon(Constants.rightDrive);
+        rightDrive.setName("Drivebase", "Right Drive Motor");
+
         leftDriveEncoder = new Encoder(Constants.leftDriveEncoderA, Constants.leftDriveEncoderB, Constants.isLeftDriveEncoderFlipped, CounterBase.EncodingType.k4X);
+        leftDriveEncoder.setName("Drivebase","Left Drive Motor");
+
         rightDriveEncoder = new Encoder(Constants.rightDriveEncoderA, Constants.rightDriveEncoderB, Constants.isRightDriveEncoderFlipped, CounterBase.EncodingType.k4X);
+        rightDriveEncoder.setName("Drivebase","Right Drive Motor");
+
         shifter = new Solenoid(Constants.shifter);
+
         navX = new AHRS(SPI.Port.kMXP);
 
     }
@@ -77,6 +87,7 @@ public class Drivebase extends Subsystem implements Thread{
     }
 
     public void update() {
-
+        SmartDashboard.putNumber("Left Encoder Distance", leftDriveEncoder.getDistance());
+        SmartDashboard.putNumber("Right Encoder Distance", rightDriveEncoder.getDistance());
     }
 }

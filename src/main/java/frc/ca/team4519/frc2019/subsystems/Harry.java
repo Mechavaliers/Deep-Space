@@ -13,6 +13,8 @@ public class Harry extends Subsystem implements Thread{
 
     public static Harry thisInstance = new Harry();
 
+    public static Harry grabInstance() {return thisInstance;}
+
     public Solenoid harry;
     public Solenoid yeeter;
 
@@ -31,6 +33,18 @@ public class Harry extends Subsystem implements Thread{
 
     public void loops() {
 
+    }
+
+    public void welcomeToTheYeetOlympics(boolean extend, boolean yeet) {
+        if (extend && yeet) {
+            harry.set(ENGAGED);
+            yeeter.set(YEET);
+        }else if(extend) {
+            harry.set(ENGAGED);
+        }else {
+            harry.set(STOW);
+            yeeter.set(STOW);
+        }
     }
 
     public void update() {

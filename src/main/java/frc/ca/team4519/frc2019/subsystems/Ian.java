@@ -65,6 +65,10 @@ public class Ian extends Subsystem implements Thread{
         }
     }
 
+    public void ianControll(boolean state) {
+        ian.set(state);
+    }
+
     public void loops() {
 
     }

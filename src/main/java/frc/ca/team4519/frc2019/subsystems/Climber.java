@@ -11,6 +11,11 @@ public class Climber extends Subsystem implements Thread{
 
     public static Climber thisInstance = new Climber();
 
+    public static Climber grabInstance() {return thisInstance;}
+
+    public boolean toggleFront = false;
+    public boolean toggleBack = false;
+
     public Solenoid frontClimber;
     public Solenoid rearClimber;
 
@@ -23,6 +28,24 @@ public class Climber extends Subsystem implements Thread{
 
     public void loops() {
 
+    }
+
+    public void frontToggle(boolean button) {
+        if(!button){
+            toggleFront=true;
+        }else if(toggleFront){
+            frontClimber.set(!frontClimber.get());
+            toggleFront=false;
+        }
+    }
+
+    public void backToggle(boolean button) {
+        if(!button) {
+            toggleBack = true;
+        }else if (toggleBack) {
+            rearClimber.set(!rearClimber.get());
+            toggleBack = false;
+        }
     }
 
     public void clearSensors() {

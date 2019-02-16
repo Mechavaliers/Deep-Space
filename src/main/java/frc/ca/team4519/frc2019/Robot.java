@@ -5,7 +5,7 @@ package frc.ca.team4519.frc2019;
 import frc.ca.team4519.frc2019.subsystems.*;
 //import frc.ca.team4519.frc2019.subsystems.Ian;
 //import frc.ca.team4519.frc2019.subsystems.Bob;
-//import frc.ca.team4519.frc2019.subsystems.Harry;
+import frc.ca.team4519.frc2019.subsystems.Harry;
 import frc.ca.team4519.frc2019.subsystems.Drivebase;
 import frc.ca.team4519.frc2019.subsystems.Ian;
 import frc.ca.team4519.frc2019.subsystems.Bob;
@@ -38,10 +38,19 @@ public class Robot extends MechaTimedRobot{
 
     public void teleopPeriodic() {
         //Drivetrain Behaviour (THROTTLE, TURN)
-        Drivebase.grabInstance().arcade(driver.getRawAxis(1), driver.getRawAxis(4)); //done
+        Drivebase.grabInstance().setLeftRightPower(Drivebase.grabInstance().arcade(driver.getRawAxis(1), driver.getRawAxis(4)));
         //Intake Behaviour (IN,OUT)
-        Ian.grabInstance().bobsManipulation(operator.getRawButton(2), operator.getRawButton(3));
+        Ian.grabInstance().bobsManipulation(operator.getRawButton(7), operator.getRawButton(6));
+        //Intake up/down
+        Ian.grabInstance().ianMindControl(operator.getRawButton(2));
 
+        //Shooter Flywheel behavior (SHOTSPEED, INTAKE, )
+        Bob.grabnstance().shotLogic(operator.getRawButton(1), operator.getRawButton(7));
+        //Hatch Mech (EXTEND, YEET)
+        Harry.grabInstance().welcomeToTheYeetOlympics(operator.getRawButton(4), operator.getRawButton(8));
+        //Climber
+        Climber.grabInstance().frontToggle(operator.getRawButton(11));
+        Climber.grabInstance().backToggle(operator.getRawButton(10));
     }
 
     public void allPeriodic() {

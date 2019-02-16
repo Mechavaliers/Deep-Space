@@ -46,5 +46,11 @@ public class Gains {
     public static double iansSpitSpeed = -1.0;  //TODO Update This
     public static double killIan = 0.0; //TODO Update This
 
+    public static double bobShotSpeed = 1.0; //TODO Update me
+    public static double bobIntakeSpeed = 0.5; //TODO Update me
+
+    public static double limelightForward = 0; //TODO Update me
+    public static double limelightReverse = 123; //TODO Update Me
+
 
 }
