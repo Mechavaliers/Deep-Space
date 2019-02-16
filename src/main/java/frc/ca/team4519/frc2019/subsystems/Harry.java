@@ -18,13 +18,15 @@ public class Harry extends Subsystem implements Thread{
     public Solenoid harry;
     public Solenoid yeeter;
 
-    public boolean YEET = true, STOW = true, ENGAGED = false;
+    public boolean YEET = true, STOW = false, ENGAGED = true;
 
     public Harry() {
         thisInstance = this;
 
         harry = new Solenoid(Constants.harry);
+        harry.set(false);
         yeeter = new Solenoid(Constants.yeeter);
+        yeeter.set(false);
     }
 
     public void yeet() {
@@ -36,11 +38,13 @@ public class Harry extends Subsystem implements Thread{
     }
 
     public void welcomeToTheYeetOlympics(boolean extend, boolean yeet) {
-        if (extend && yeet) {
-            harry.set(ENGAGED);
-            yeeter.set(YEET);
+        if (yeet) {
+            yeeter.set(yeet);
         }else if(extend) {
             harry.set(ENGAGED);
+        }else if (extend && yeet){
+            harry.set(ENGAGED);
+            yeeter.set(YEET);
         }else {
             harry.set(STOW);
             yeeter.set(STOW);

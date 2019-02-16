@@ -21,6 +21,10 @@ public class Robot extends MechaTimedRobot{
     Joystick operator = new Joystick(1);
 
 
+    public void main(String[] args){
+
+    }
+
     public void autonomousInit() {
 
     }
@@ -38,7 +42,12 @@ public class Robot extends MechaTimedRobot{
 
     public void teleopPeriodic() {
         //Drivetrain Behaviour (THROTTLE, TURN)
-        Drivebase.grabInstance().setLeftRightPower(Drivebase.grabInstance().arcade(driver.getRawAxis(1), driver.getRawAxis(4)));
+        //Drivebase.grabInstance().setLeftRightPower(Drivebase.grabInstance().arcade(driver.getRawAxis(1), driver.getRawAxis(4)));
+        Drivebase.grabInstance().arcade(driver.getRawAxis(1), driver.getRawAxis(4), driver.getRawButton(5));
+        Drivebase.grabInstance().shift(driver.getRawButton(6));
+
+        Limelight.grabInstance().direction(Drivebase.grabInstance().invertedState());
+
         //Intake Behaviour (IN,OUT)
         Ian.grabInstance().bobsManipulation(operator.getRawButton(7), operator.getRawButton(6));
         //Intake up/down
@@ -46,6 +55,8 @@ public class Robot extends MechaTimedRobot{
 
         //Shooter Flywheel behavior (SHOTSPEED, INTAKE, )
         Bob.grabnstance().shotLogic(operator.getRawButton(1), operator.getRawButton(7));
+
+        Bob.grabnstance().shoot(operator.getRawButton(3));
         //Hatch Mech (EXTEND, YEET)
         Harry.grabInstance().welcomeToTheYeetOlympics(operator.getRawButton(4), operator.getRawButton(8));
         //Climber

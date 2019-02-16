@@ -34,12 +34,16 @@ public class Bob extends Subsystem implements Thread{
 
     public void shotLogic(boolean wantSpinUp, boolean wantIntake){
         if(wantSpinUp){
-            wheelControl(Gains.bobShotSpeed);
+            wheelControl(-Gains.bobShotSpeed);
         }else if(wantIntake) {
             wheelControl(Gains.bobIntakeSpeed);
         }else{
             wheelControl(0.0);
         }
+    }
+
+    public void shoot(boolean wantShot){
+        indexer.set(wantShot);
     }
 
     public void wheelControl(double speed){

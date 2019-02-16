@@ -18,25 +18,27 @@ public class Constants {
     public static final boolean isRightDriveEncoderFlipped = false;
 
     //Shooter
-    public static final int leftShooterWheel = 2;
-    public static final int rightShooterWheel = 3;
+    public static final int leftShooterWheel = 0;
+    public static final int rightShooterWheel = 1;
     public static final int indexer = 1;    //confirmed
 
     //Intake
         //Solenoid
     public static final int ian = 3; //confirmed
         //Intake
-    public static final int iansFriend = 4;
+    public static final int iansFriend = 2;
 
     //Hatch Mech
     public static final int harry = 4;  //confirmed
     public static final int yeeter = 0; //confirmed
 
-    public static final int cameraPivot = 6;
+    public static final int cameraPivot = 2;
 
     //Climber
     public static final int frontClimber = 5;
     public static final int rearClimber = 6;
+
+
 
 
 }

@@ -29,8 +29,8 @@ public class Limelight extends Subsystem implements Thread{
 
     }
 
-    public void direction(boolean invert){
-        if (invert){
+    public void direction(double invert){
+        if (invert == -1.0){
             pivot.setAngle(facingBackwards);
         }else {
             pivot.setAngle(facingForwards);
