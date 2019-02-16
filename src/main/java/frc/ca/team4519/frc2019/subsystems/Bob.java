@@ -30,7 +30,11 @@ public class Bob extends Subsystem implements Thread{
 
     }
 
-    public void disable() {
+    public void clearSensors() {
+
+    }
+
+    public void disableSubsystem() {
         leftWheel.set(0.0);
         rightWheel.set(0.0);
     }

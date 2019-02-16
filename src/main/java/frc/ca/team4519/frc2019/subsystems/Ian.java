@@ -69,6 +69,13 @@ public class Ian extends Subsystem implements Thread{
 
     }
 
+    public void disableSubsystem() {
+
+    }
+    public void clearSensors() {
+
+    }
+
     public void update() {
 
     }

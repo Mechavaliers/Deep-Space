@@ -37,6 +37,10 @@ public class Harry extends Subsystem implements Thread{
 
     }
 
+    public void clearSensors() {
+
+    }
+
     public void disableSubsystem() {
         harry.set(STOW);
         yeeter.set(!YEET);
