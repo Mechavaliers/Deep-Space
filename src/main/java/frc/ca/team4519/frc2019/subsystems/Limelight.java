@@ -27,4 +27,18 @@ public class Limelight extends Subsystem implements Thread{
 
     }
 
+    @Override
+    public void clearSensors() {
+
+    }
+
+    @Override
+    public void disableSubsystem() {
+
+    }
+
+    @Override
+    public void update() {
+
+    }
 }

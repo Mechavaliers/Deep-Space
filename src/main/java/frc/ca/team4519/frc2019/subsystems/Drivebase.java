@@ -32,7 +32,7 @@ public class Drivebase extends Subsystem implements Thread{
     }
 
     public interface Controller {
-        DrivetrainOutput update(Pose pose);
+      //  DrivetrainOutput update(Pose pose);
     }
 
     public Drivebase() {
