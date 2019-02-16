@@ -32,5 +32,7 @@ public class Constants {
     public static final int harry = 3;
     public static final int yeeter = 4;
 
+    public static final int cameraPivot = 6;
+
 
 }
