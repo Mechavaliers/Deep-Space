@@ -1,4 +1,4 @@
-package frc.ca.team4519.frc2019.subsystems;
+package frc.ca.team4519.frc2019;
 
 import edu.wpi.first.wpilibj.*;
 
@@ -13,17 +13,22 @@ public class Ian extends Subsystem implements Thread{
     public static Ian thisInstance = new Ian();
 
     public Solenoid ian;
-  //  public CANTalon iansFriend;
+    //public CANTalon iansFriend;
 
     public boolean DEPLOY = true, RETRACT = false;
 
     public static Ian grabInstance() { return thisInstance; }
+    public void clearSensors(){
 
+    }
+    public void disableSubsystem(){
+
+    }
     public Ian() {
         thisInstance = this;
 
         ian = new Solenoid(Constants.ian);
-     //   iansFriend = new CANTalon(Constants.iansFriend);
+        //iansFriend = new CANTalon(Constants.iansFriend);
     }
 
     public void wantIan() {
@@ -43,7 +48,7 @@ public class Ian extends Subsystem implements Thread{
     }
 
     public void inviteBobOver() {
-      //  iansFriend.set(Gains.iansIntakeSpeed);
+        //iansFriend.set(Gains.iansIntakeSpeed);
     }
 
     public void kickBobOut() {
@@ -55,7 +60,7 @@ public class Ian extends Subsystem implements Thread{
     }
 
     public void bobsManipulation(boolean inviteBobOver, boolean kickBobOut) {
-        
+
         if(inviteBobOver){
             inviteBobOver();
         }else if(kickBobOut){
@@ -69,14 +74,7 @@ public class Ian extends Subsystem implements Thread{
 
     }
 
-    public void disableSubsystem() {
-
-    }
-    public void clearSensors() {
-
-    }
-
     public void update() {
 
     }
-}   
+}
