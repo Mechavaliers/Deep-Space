@@ -2,6 +2,9 @@ package frc.ca.team4519.frc2019.subsystems;
 
 import edu.wpi.first.wpilibj.*;
 
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
 import frc.ca.team4519.frc2019.Constants;
 import frc.ca.team4519.frc2019.Gains;
 import frc.ca.team4519.lib.Thread;
@@ -13,7 +16,7 @@ public class Ian extends Subsystem implements Thread{
     public static Ian thisInstance = new Ian();
 
     public Solenoid ian;
-  //  public CANTalon iansFriend;
+    public TalonSRX iansFriend;
 
     public boolean DEPLOY = true, RETRACT = false;
 
@@ -23,7 +26,7 @@ public class Ian extends Subsystem implements Thread{
         thisInstance = this;
 
         ian = new Solenoid(Constants.ian);
-     //   iansFriend = new CANTalon(Constants.iansFriend);
+        iansFriend = new TalonSRX(Constants.iansFriend);
     }
 
     public void wantIan() {
@@ -43,15 +46,15 @@ public class Ian extends Subsystem implements Thread{
     }
 
     public void inviteBobOver() {
-      //  iansFriend.set(Gains.iansIntakeSpeed);
+        iansFriend.set(ControlMode.PercentOutput, Gains.iansIntakeSpeed);
     }
 
     public void kickBobOut() {
-        //iansFriend.set(Gains.iansSpitSpeed);
+        iansFriend.set(ControlMode.PercentOutput, Gains.iansSpitSpeed);
     }
 
     public void killIan() {
-        //iansFriend.set(Gains.killIan);
+        iansFriend.set(ControlMode.PercentOutput, Gains.killIan);
     }
 
     public void bobsManipulation(boolean inviteBobOver, boolean kickBobOut) {
