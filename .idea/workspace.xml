@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c6a3ad1-997b-4eec-b938-074c49fdcf1a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/Ian.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Bob.Java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Bob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Drivebase.Java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Drivebase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Harry.Java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Harry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Ian.Java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Ian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Limelight.Java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Limelight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frc/ca/team4519/lib/Subsystem.Java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/ca/team4519/lib/Subsystem.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -54,7 +59,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Harry.Java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Harry.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1102">
               <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
@@ -66,7 +71,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Drivebase.Java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Drivebase.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1943">
               <caret line="71" column="21" selection-end-line="81" selection-end-column="1" />
@@ -102,7 +107,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Limelight.Java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Limelight.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="551">
               <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
@@ -114,7 +119,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Ian.Java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Ian.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="629">
               <caret line="53" column="36" selection-end-line="74" selection-end-column="4" />
@@ -300,7 +305,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550279039504" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550279872746" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -324,16 +329,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1550157393149</updated>
-      <workItem from="1550157397744" duration="12281000" />
+      <workItem from="1550157397744" duration="13094000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12281000" />
+    <option name="totallyTimeSpent" value="13094000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="40" width="3840" height="2044" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="Image Layers" order="1" />
@@ -419,7 +423,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Bob.Java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Bob.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
           <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
@@ -450,7 +454,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Limelight.Java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Limelight.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
           <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
@@ -460,7 +464,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Harry.Java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Harry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1102">
           <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
@@ -477,7 +481,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Drivebase.Java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Drivebase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1943">
           <caret line="71" column="21" selection-end-line="81" selection-end-column="1" />
@@ -497,7 +501,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Ian.Java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/frc/ca/team4519/frc2019/subsystems/Ian.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="53" column="36" selection-end-line="74" selection-end-column="4" />
