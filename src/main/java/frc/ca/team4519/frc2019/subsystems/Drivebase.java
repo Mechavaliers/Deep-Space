@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.VictorSP;
 
 import frc.ca.team4519.frc2019.Constants;
+import frc.ca.team4519.frc2019.Gains;
 import frc.ca.team4519.lib.DrivetrainOutput;
 import frc.ca.team4519.lib.Subsystem;
 import frc.ca.team4519.lib.Thread;
@@ -50,9 +51,11 @@ public class Drivebase extends Subsystem implements Thread{
         rightDrive.setName("Drivebase", "Right Drive Motor");
 
         leftDriveEncoder = new Encoder(Constants.leftDriveEncoderA, Constants.leftDriveEncoderB, Constants.isLeftDriveEncoderFlipped, CounterBase.EncodingType.k4X);
+        leftDriveEncoder.setDistancePerPulse(Gains.DrivebaseGains.EncoderTicksPerRev);
         leftDriveEncoder.setName("Drivebase","Left Drive Motor");
 
         rightDriveEncoder = new Encoder(Constants.rightDriveEncoderA, Constants.rightDriveEncoderB, Constants.isRightDriveEncoderFlipped, CounterBase.EncodingType.k4X);
+        rightDriveEncoder.setDistancePerPulse(Gains.DrivebaseGains.EncoderTicksPerRev);
         rightDriveEncoder.setName("Drivebase","Right Drive Motor");
 
         shifter = new Solenoid(Constants.shifter);
@@ -113,6 +116,8 @@ public class Drivebase extends Subsystem implements Thread{
 
     public void update() {
         SmartDashboard.putNumber("Left Encoder Distance", leftDriveEncoder.getDistance());
+        SmartDashboard.putNumber("Left Encoder Velocity", leftDriveEncoder.getRate());
         SmartDashboard.putNumber("Right Encoder Distance", rightDriveEncoder.getDistance());
+        SmartDashboard.putNumber("Right Encoder Velocity", rightDriveEncoder.getRate());
     }
 }

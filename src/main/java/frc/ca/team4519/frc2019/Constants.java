@@ -20,6 +20,10 @@ public class Constants {
     //Shooter
     public static final int leftShooterWheel = 0;
     public static final int rightShooterWheel = 1;
+
+    public static final int leftShooterWheelEncoder = 4;
+    public static final int rightShooterWheelEncoder = 5;
+
     public static final int indexer = 1;    //confirmed
 
     //Intake
