@@ -66,7 +66,6 @@ public class Bob extends Subsystem implements Thread{
     }
 
     public void loops() {
-
     }
 
     public void ways() {
@@ -86,5 +85,7 @@ public class Bob extends Subsystem implements Thread{
 
         SmartDashboard.putNumber("Left Shooter Wheel Rps", leftFlwheel.getRate());
         SmartDashboard.putNumber("Right Shooter Wheel Rps", rightFlywheel.getRate());
+        SmartDashboard.putNumber("left flywheel get", leftFlwheel.get());
+        SmartDashboard.putNumber("left flywheel get distance", leftFlwheel.getDistance());
     }
 }

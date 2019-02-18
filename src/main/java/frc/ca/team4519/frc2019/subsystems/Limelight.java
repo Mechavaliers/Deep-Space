@@ -100,6 +100,10 @@ public class Limelight extends Subsystem implements Thread{
     @Override
     public void update() {
         SmartDashboard.putNumber("Distance from goal (Limelight)", distFromGoal());
+        SmartDashboard.putNumber("somehting", getHorizontalOffset());
+        SmartDashboard.putNumber("somehting", getVericalalOffset());
+        SmartDashboard.putBoolean("Has Valid Target", hasValidTarget());
+        
 
     }
 }
