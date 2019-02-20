@@ -42,13 +42,15 @@ public class Limelight extends Subsystem implements Thread{
     public void direction(double invert){
         if (invert == -1.0){
             pivot.setAngle(facingBackwards);
+            SmartDashboard.putNumber("camera angle", facingBackwards);
         }else {
             pivot.setAngle(facingForwards);
+            SmartDashboard.putNumber("camera angle", facingForwards);
         }
     }
 
     public double distFromGoal() {
-        return 42.569*Math.pow(limelightTable.getEntry("ta").getDouble(0), -0.5);
+        return (42.569*Math.pow(limelightTable.getEntry("ta").getDouble(0), -0.5) * (13.0/7.0));
     }
 
     public double getHorizontalOffset(){
@@ -83,6 +85,15 @@ public class Limelight extends Subsystem implements Thread{
         limelightTable.getEntry("camMode").setNumber(3);
     }
 
+    public boolean inRange() {
+        
+        if(47.0 >= distFromGoal() && distFromGoal() >= 38.0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
     public void loops() {
 
     }
@@ -99,10 +110,11 @@ public class Limelight extends Subsystem implements Thread{
 
     @Override
     public void update() {
-        SmartDashboard.putNumber("Distance from goal (Limelight)", distFromGoal());
-        SmartDashboard.putNumber("somehting", getHorizontalOffset());
-        SmartDashboard.putNumber("somehting", getVericalalOffset());
+        SmartDashboard.putNumber("Distance from goal (Limelight)", (distFromGoal()));
+        SmartDashboard.putNumber("target horizontal offset", getHorizontalOffset());
+        SmartDashboard.putNumber("target vertical offset", getVericalalOffset());
         SmartDashboard.putBoolean("Has Valid Target", hasValidTarget());
+        SmartDashboard.putBoolean("In range for shot?", inRange());
         
 
     }

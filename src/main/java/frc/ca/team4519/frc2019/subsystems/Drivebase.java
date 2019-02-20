@@ -83,7 +83,8 @@ public class Drivebase extends Subsystem implements Thread{
 
     public DrivetrainOutput arcade(double throttle, double turn, boolean invert) {
 
-            
+            double left;
+            double right;
 
             throttle = (Math.abs(throttle) > Math.abs(0.03))? throttle : 0.0;
             turn = (Math.abs(turn) > Math.abs(0.03))? turn : 0.0;
@@ -95,8 +96,15 @@ public class Drivebase extends Subsystem implements Thread{
                 toggleFront=false;
             }
 
-            double right = throttle + turn ;
-            double left = throttle - turn;
+            if(inversion == -1.0){
+                right = throttle - turn ;
+                left = throttle + turn;
+            }else{
+                right = throttle + turn ;
+                left = throttle - turn;
+            }
+
+            
             SmartDashboard.putNumber("Drivebase Output Throttle", throttle);
             SmartDashboard.putNumber("Drivebase Output Turn", turn);
             leftDrive.set(left*inversion);
@@ -113,7 +121,7 @@ public class Drivebase extends Subsystem implements Thread{
     public void disableSubsystem() {
         setLeftRightPower(new DrivetrainOutput(0.0, 0.0));
     }
-
+    @Override
     public void update() {
         SmartDashboard.putNumber("Left Encoder Distance", leftDriveEncoder.getDistance());
         SmartDashboard.putNumber("Left Encoder Velocity", leftDriveEncoder.getRate());

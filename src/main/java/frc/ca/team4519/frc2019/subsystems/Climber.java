@@ -14,16 +14,25 @@ public class Climber extends Subsystem implements Thread{
     public static Climber grabInstance() {return thisInstance;}
 
     public boolean toggleFront = false;
-    public boolean toggleBack = false;
+    public boolean toggleRear = false;
 
-    public Solenoid frontClimber;
-    public Solenoid rearClimber;
+    public Solenoid frontClimberUP;
+   // public Solenoid frontClimberDN;
+    public Solenoid rearClimberUP;
+    //public Solenoid rearClimberDN;
 
     public Climber() {
         thisInstance = this;
 
-        frontClimber = new Solenoid(Constants.frontClimber);
-        rearClimber = new Solenoid(Constants.rearClimber);
+        frontClimberUP = new Solenoid(6);//change all these
+        //frontClimberDN = new Solenoid(7);
+        rearClimberUP = new Solenoid(5);
+       // rearClimberDN = new Solenoid(5);
+
+        frontClimberUP.set(true);
+        //frontClimberDN.set(false);
+        rearClimberUP.set(true);
+        //rearClimberDN.set(false);
     }
 
     public void loops() {
@@ -34,17 +43,19 @@ public class Climber extends Subsystem implements Thread{
         if(!button){
             toggleFront=true;
         }else if(toggleFront){
-            frontClimber.set(!frontClimber.get());
+            frontClimberUP.set(!frontClimberUP.get());
+            //frontClimberDN.set(!frontClimberDN.get());
             toggleFront=false;
         }
     }
 
     public void backToggle(boolean button) {
         if(!button) {
-            toggleBack = true;
-        }else if (toggleBack) {
-            rearClimber.set(!rearClimber.get());
-            toggleBack = false;
+            toggleRear = true;
+        }else if (toggleRear) {
+            rearClimberUP.set(!rearClimberUP.get());
+            //rearClimberDN.set(!rearClimberDN.get());
+            toggleRear = false;
         }
     }
 

@@ -29,7 +29,7 @@ public class Constants {
     //Intake
         //Solenoid
     public static final int ian = 3; //confirmed
-        //Intake
+        //Intake Wheels
     public static final int iansFriend = 2;
 
     //Hatch Mech
@@ -39,8 +39,8 @@ public class Constants {
     public static final int cameraPivot = 2;
 
     //Climber
-    public static final int frontClimber = 5;
-    public static final int rearClimber = 6;
+    //public static final int frontClimber = 5;
+    //public static final int rearClimber = 6;
 
 
 

@@ -19,6 +19,7 @@ public class Robot extends MechaTimedRobot{
 
     Joystick driver = new Joystick(0);
     Joystick operator = new Joystick(1);
+    Joystick operator2 = new Joystick(2);
 
 
     public void main(String[] args){
@@ -41,6 +42,11 @@ public class Robot extends MechaTimedRobot{
     }
 
     public void teleopPeriodic() {
+        Drivebase.grabInstance().update();
+        Bob.grabnstance().update();
+        Harry.grabInstance().update();
+        Ian.grabInstance().update();
+        Limelight.grabInstance().update();
         //Drivetrain Behaviour (THROTTLE, TURN)
         //Drivebase.grabInstance().setLeftRightPower(Drivebase.grabInstance().arcade(driver.getRawAxis(1), driver.getRawAxis(4)));
         Drivebase.grabInstance().arcade(driver.getRawAxis(1), driver.getRawAxis(4), driver.getRawButton(5));
@@ -58,14 +64,27 @@ public class Robot extends MechaTimedRobot{
 
         Bob.grabnstance().shoot(operator.getRawButton(3));
         //Hatch Mech (EXTEND, YEET)
-        Harry.grabInstance().welcomeToTheYeetOlympics(operator.getRawButton(4), operator.getRawButton(8));
+        Harry.grabInstance().welcomeToTheYeetOlympics(operator2.getRawButton(4), operator2.getRawButton(8));
         //Climber
-        Climber.grabInstance().frontToggle(operator.getRawButton(11));
-        Climber.grabInstance().backToggle(operator.getRawButton(10));
+        Climber.grabInstance().frontToggle(driver.getRawButton(4));
+        Climber.grabInstance().backToggle(driver.getRawButton(1));
     }
 
+
+
+    public void disabledPeriodic(){
+        Drivebase.grabInstance().update();
+        Bob.grabnstance().update();
+        Harry.grabInstance().update();
+        Ian.grabInstance().update();
+        Limelight.grabInstance().update();
+    }
     public void allPeriodic() {
-        
+        Drivebase.grabInstance().update();
+        Bob.grabnstance().update();
+        Harry.grabInstance().update();
+        Ian.grabInstance().update();
+        Limelight.grabInstance().update();
     }
 
 }

@@ -40,14 +40,13 @@ public class Harry extends Subsystem implements Thread{
     public void welcomeToTheYeetOlympics(boolean extend, boolean yeet) {
         if (yeet) {
             yeeter.set(yeet);
-        }else if(extend) {
-            harry.set(ENGAGED);
-        }else if (extend && yeet){
-            harry.set(ENGAGED);
-            yeeter.set(YEET);
-        }else {
-            harry.set(STOW);
+        }else{
             yeeter.set(STOW);
+        } 
+        if(extend) {
+            harry.set(ENGAGED);
+        }else{
+            harry.set(STOW);
         }
     }
 
