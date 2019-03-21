@@ -14,6 +14,7 @@ import frc.ca.team4519.frc2019.subsystems.Limelight;
 import frc.ca.team4519.lib.*;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Compressor;
 
 public class Robot extends MechaTimedRobot{
 
@@ -21,21 +22,23 @@ public class Robot extends MechaTimedRobot{
     Joystick operator = new Joystick(1);
     Joystick operator2 = new Joystick(2);
 
+    Compressor comp = new Compressor(0);
+
 
     public void main(String[] args){
 
     }
 
     public void autonomousInit() {
-
+        teleopInit();
     }
 
     public void autonomousPeriodic() {
-
+        teleopPeriodic();
     }
 
     public void teleopInit() {
-        
+      //  comp.setClosedLoopControl(false);
         Drivebase.grabInstance().clearSensors();
        // Limelight.grabInstance().vizunAWP
        
@@ -47,6 +50,7 @@ public class Robot extends MechaTimedRobot{
         Harry.grabInstance().update();
         Ian.grabInstance().update();
         Limelight.grabInstance().update();
+        Climber.grabInstance().update();
         //Drivetrain Behaviour (THROTTLE, TURN)
         //Drivebase.grabInstance().setLeftRightPower(Drivebase.grabInstance().arcade(driver.getRawAxis(1), driver.getRawAxis(4)));
         Drivebase.grabInstance().arcade(driver.getRawAxis(1), driver.getRawAxis(4), driver.getRawButton(5));
@@ -67,7 +71,13 @@ public class Robot extends MechaTimedRobot{
         Harry.grabInstance().welcomeToTheYeetOlympics(operator2.getRawButton(4), operator2.getRawButton(8));
         //Climber
         Climber.grabInstance().frontToggle(driver.getRawButton(4));
-        Climber.grabInstance().backToggle(driver.getRawButton(1));
+      //  Climber.grabInstance().backToggle(driver.getRawButton(1));
+
+        if (operator2.getRawButton(11)){
+            comp.setClosedLoopControl(true);
+        }else {
+            comp.setClosedLoopControl(false);
+        }
     }
 
 
@@ -78,6 +88,7 @@ public class Robot extends MechaTimedRobot{
         Harry.grabInstance().update();
         Ian.grabInstance().update();
         Limelight.grabInstance().update();
+        comp.setClosedLoopControl(false);
     }
     public void allPeriodic() {
         Drivebase.grabInstance().update();

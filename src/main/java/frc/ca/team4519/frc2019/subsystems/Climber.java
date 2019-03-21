@@ -1,7 +1,7 @@
 package frc.ca.team4519.frc2019.subsystems;
 
 import edu.wpi.first.wpilibj.Solenoid;
-
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.ca.team4519.frc2019.Constants;
 import frc.ca.team4519.lib.Thread;
 import frc.ca.team4519.lib.*;
@@ -29,9 +29,9 @@ public class Climber extends Subsystem implements Thread{
         rearClimberUP = new Solenoid(5);
        // rearClimberDN = new Solenoid(5);
 
-        frontClimberUP.set(true);
+        frontClimberUP.set(false);
         //frontClimberDN.set(false);
-        rearClimberUP.set(true);
+        rearClimberUP.set(false);
         //rearClimberDN.set(false);
     }
 
@@ -68,7 +68,7 @@ public class Climber extends Subsystem implements Thread{
     }
 
     public void update() {
-        
+        SmartDashboard.putBoolean("Back Climb",rearClimberUP.get());
     }
     
 }
