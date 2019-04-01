@@ -71,7 +71,7 @@ public class Robot extends MechaTimedRobot{
         Harry.grabInstance().welcomeToTheYeetOlympics(operator2.getRawButton(4), operator2.getRawButton(8));
         //Climber
         Climber.grabInstance().frontToggle(driver.getRawButton(4));
-      //  Climber.grabInstance().backToggle(driver.getRawButton(1));
+        Climber.grabInstance().backToggle(driver.getRawButton(1));
 
         if (operator2.getRawButton(11)){
             comp.setClosedLoopControl(true);

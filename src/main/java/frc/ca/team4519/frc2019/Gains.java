@@ -49,7 +49,7 @@ public class Gains {
     public static double bobShotSpeed = 0.9; //TODO Update me
     public static double bobIntakeSpeed = 0.5; //TODO Update me
 
-    public static double limelightForward = 180; //TODO Update me
+    public static double limelightForward = 200; //TODO Update me
     public static double limelightReverse = 0; //TODO Update Me
 
 
